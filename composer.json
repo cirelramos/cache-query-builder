@@ -11,11 +11,11 @@
     ],
     "require": {
         "php": "^7.4|^8.0",
-        "spatie/laravel-query-builder": "^5.0",
-        "illuminate/support": "^9.3",
-        "illuminate/http": "^9.3",
-        "illuminate/config": "^9.3",
-        "illuminate/database": "^9.3",
+        "spatie/laravel-query-builder": "^3.6",
+        "illuminate/database": "^7.20|^8.19|^9.0",
+        "illuminate/http": "^7.20|^8.19|^9.0",
+        "illuminate/config": "^7.20|^8.19|^9.0",
+        "illuminate/database": "^7.20|^8.19|^9.0",
         "kirschbaum-development/eloquent-power-joins": "^2.6"
     },
     "autoload": {
