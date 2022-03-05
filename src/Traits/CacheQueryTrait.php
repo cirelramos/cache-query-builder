@@ -2,7 +2,7 @@
 
 namespace Cirelramos\Cache\Traits;
 
-use Cirelramos\Cache\Classes\ModelConst;
+use Cirelramos\Cache\Classes\CacheConst;
 use Cirelramos\Cache\Repositories\JoinBuilder\CacheBuilder;
 use Cirelramos\Cache\Services\GetQueryRelationShipService;
 use Cirelramos\Cache\Services\GetTagCacheService;
@@ -222,7 +222,7 @@ trait CacheQueryTrait
     private function getModelTimeConstant($itemThis): mixed
     {
         $model = $itemThis->getModel();
-        $time = ModelConst::CACHE_TIME_FIVE_MINUTES;
+        $time = CacheConst::CACHE_TIME_FIVE_MINUTES;
 
         if (defined($model->getMorphClass()."::TIME_CACHE_MODEL")) {
                 $time = $model::TIME_CACHE_MODEL;

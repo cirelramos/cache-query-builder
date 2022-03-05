@@ -2,7 +2,7 @@
 
 namespace Cirelramos\Cache\Services;
 
-use Cirelramos\Cache\Classes\ModelConst;
+use Cirelramos\Cache\Classes\CacheConst;
 use Cirelramos\Cache\Repositories\JoinBuilder\CacheBuilder;
 use Exception;
 
@@ -23,7 +23,7 @@ class GetTagCacheService
     {
         $model      = ( $query instanceof CacheBuilder ) ? $query->getModel() : null;
         $tag        = $tag ?? [];
-        $tagDefault = ModelConst::CACHE_TAG_NAME;
+        $tagDefault = CacheConst::CACHE_TAG_NAME;
         $arrayTags = [ $tagDefault ];
 
         if (is_string($tag)) {

@@ -4,7 +4,7 @@
 
 namespace Cirelramos\Cache\Classes;
 
-class ModelConst
+class CacheConst
 {
     public const CACHE_TAG_NAME            = "cache_query_builder_";
     public const CACHE_TIME_DAY            = 186400;  //TTL

@@ -2,7 +2,7 @@
 
 namespace Cirelramos\Cache\Services;
 
-use Cirelramos\Cache\Classes\ModelConst;
+use Cirelramos\Cache\Classes\CacheConst;
 
 /**
  * Class GetParametersPaginationService
@@ -16,7 +16,7 @@ class GetParametersPaginationService
      * @param     $page
      * @return array
      */
-    public static function execute($page = ModelConst::PAGE, $perPage = ModelConst::PER_PAGE): array
+    public static function execute($page = CacheConst::PAGE, $perPage = CacheConst::PER_PAGE): array
     {
         $sizeRequest = request()->size_pagination;
         $perPage     = $sizeRequest === null ? $perPage : $sizeRequest;
