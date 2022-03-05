@@ -1,0 +1,24 @@
+{
+    "name": "cirelramos/cache-query-builder",
+    "description": "it is a package provider cache from query generate and purge cache when used methods specifics",
+    "type": "library",
+    "require": {
+        "spatie/laravel-query-builder": "^5.0",
+        "illuminate/support": "^9.3",
+        "illuminate/http": "^9.3",
+        "illuminate/config": "^9.3",
+        "illuminate/database": "^9.3",
+        "kirschbaum-development/eloquent-power-joins": "^2.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cirelramos\\CacheQueryBuilder\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Cirel Ramos",
+            "email": "cirelramos@gmail.com"
+        }
+    ]
+}
