@@ -16,7 +16,7 @@ class GetParametersOrderService
      * @return array
      */
     public static function execute(
-        CacheBuilder $query,
+        $query,
                      $directionParameter = null,
                      $columnParameter = null,
                      $customAcceptColumns = [],

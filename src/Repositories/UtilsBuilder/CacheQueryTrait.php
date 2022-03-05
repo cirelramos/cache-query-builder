@@ -85,7 +85,7 @@ trait CacheQueryTrait
      * @param             $extras
      * @return string
      */
-    public function generateNameCache(CacheBuilder $query, $columns, $extras = ''): string
+    public function generateNameCache($query, $columns, $extras = ''): string
     {
         $querySql = $query->toSql();
         if (is_array($columns)) {
@@ -93,9 +93,9 @@ trait CacheQueryTrait
             $columns = json_encode($columns);
         }
 
-        $relationShip = array_keys($query->getEagerLoads());
+        $relationShip       = array_keys($query->getEagerLoads());
         $queryRelationsShip = GetQueryRelationShip::execute($query, $relationShip);
-        $relationShip = json_encode($relationShip);
+        $relationShip       = json_encode($relationShip);
         $parameters   = json_encode($query->getBindings());
         $nameCache    = $querySql;
         $nameCache    .= $parameters;
@@ -132,10 +132,10 @@ trait CacheQueryTrait
      * @return array
      */
     public function firstDataFromCacheOrDatabase(
-        CacheBuilder $query,
-                     $columns,
-                     $nameCache,
-        array        $tag
+        $query,
+        $columns,
+        $nameCache,
+        array $tag
     ): array {
         $dataIsFromCache = true;
         $dataFromCache   = $this->getCache($nameCache, $tag);
@@ -162,10 +162,10 @@ trait CacheQueryTrait
      * @return array
      */
     public function getDataFromCacheOrDatabase(
-        CacheBuilder $query,
-                     $columns,
-                     $nameCache,
-        array        $tag
+        $query,
+        $columns,
+        $nameCache,
+        array $tag
     ): array {
         $dataIsFromCache = true;
         $dataFromCache   = $this->getCache($nameCache, $tag);
