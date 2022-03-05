@@ -22,4 +22,19 @@ return [
      * 300 seconds are 5 minutes
      */
     'cache_default_time_minutes' => "300",
+
+    /*
+     * elements to load from request
+     * example:
+     * ["system_id", "credential_id", "user_id"]
+     */
+    'elements_from_request' => [],
+
+
+    /*
+     * elements to load from header request
+     * example:
+     * ["origin", "Authorization"]
+     */
+    'elements_from_header_request' => [],
 ];

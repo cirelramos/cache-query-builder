@@ -3,7 +3,7 @@
 namespace Cirelramos\Cache\Repositories\JoinBuilder;
 
 use Cirelramos\Cache\Classes\ModelConst;
-use Cirelramos\Cache\Repositories\UtilsBuilder\CacheQueryTrait;
+use Cirelramos\Cache\Traits\CacheQueryTrait;
 use Cirelramos\Cache\Services\GetParametersOrderService;
 use Cirelramos\Cache\Services\GetParametersPaginationService;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
@@ -82,8 +82,7 @@ class CacheBuilder extends Builder
             $time = ModelConst::CACHE_TIME_FIVE_MINUTES;
         }
 
-        if (request()->force_not_cache != null || request()->header('force-not-cache') !=
-            null) {
+        if (request()->header('force-not-cache') != null) {
             return $this->paginateByRequest($columns, $perPage, $pageName, $page);
         }
 

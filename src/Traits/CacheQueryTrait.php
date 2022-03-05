@@ -1,9 +1,10 @@
 <?php
 
-namespace Cirelramos\Cache\Repositories\UtilsBuilder;
+namespace Cirelramos\Cache\Traits;
 
 use Cirelramos\Cache\Classes\ModelConst;
 use Cirelramos\Cache\Repositories\JoinBuilder\CacheBuilder;
+use Cirelramos\Cache\Services\GetQueryRelationShipService;
 use Cirelramos\Cache\Services\GetTagCacheService;
 use Illuminate\Config\Repository;
 use Illuminate\Contracts\Foundation\Application;
@@ -94,7 +95,7 @@ trait CacheQueryTrait
         }
 
         $relationShip       = array_keys($query->getEagerLoads());
-        $queryRelationsShip = GetQueryRelationShip::execute($query, $relationShip);
+        $queryRelationsShip = GetQueryRelationShipService::execute($query, $relationShip);
         $relationShip       = json_encode($relationShip);
         $parameters   = json_encode($query->getBindings());
         $nameCache    = $querySql;
@@ -139,8 +140,7 @@ trait CacheQueryTrait
     ): array {
         $dataIsFromCache = true;
         $dataFromCache   = $this->getCache($nameCache, $tag);
-        if (request()->force_not_cache != null || request()->header('force-not-cache')!=
-            null) {
+        if (request()->header('force-not-cache') != null) {
             $dataFromCache = null;
         }
 
@@ -169,8 +169,7 @@ trait CacheQueryTrait
     ): array {
         $dataIsFromCache = true;
         $dataFromCache   = $this->getCache($nameCache, $tag);
-        if (request()->force_not_cache != null || request()->header('force-not-cache') !=
-            null) {
+        if (request()->header('force-not-cache') != null) {
             $dataFromCache = null;
         }
 

@@ -1,12 +1,12 @@
 <?php
 
-namespace Cirelramos\Cache\Repositories\UtilsBuilder;
+namespace Cirelramos\Cache\Services;
+
 
 /**
  * Class GetQueryRelationShip
- * @package Cirelramos\Cache\Repositories\UtilsBuilder
  */
-class GetQueryRelationShip
+class GetQueryRelationShipService
 {
     /**
      * @param       $query
@@ -36,7 +36,7 @@ class GetQueryRelationShip
             $explodeItem = explode('.', $relationShip);
 
             if (count($explodeItem) > 1) {
-                return GetQuerySubRelationShip::execute($query, $explodeItem);
+                return GetQuerySubRelationShipService::execute($query, $explodeItem);
             }
 
             $queryRelationsShip = $query->getRelation($relationShip);

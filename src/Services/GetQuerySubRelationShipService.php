@@ -1,12 +1,12 @@
 <?php
 
-namespace Cirelramos\Cache\Repositories\UtilsBuilder;
+namespace Cirelramos\Cache\Services;
+
 
 /**
  * Class GetQuerySubRelationShip
- * @package Cirelramos\Cache\Repositories\UtilsBuilder
  */
-class GetQuerySubRelationShip
+class GetQuerySubRelationShipService
 {
     /**
      * @param       $query
