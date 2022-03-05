@@ -222,7 +222,7 @@ trait CacheQueryTrait
     private function getModelTimeConstant($itemThis): mixed
     {
         $model = $itemThis->getModel();
-        $time = CacheConst::CACHE_TIME_FIVE_MINUTES;
+        $time = config('cache-query.cache_default_time_seconds');
 
         if (defined($model->getMorphClass()."::TIME_CACHE_MODEL")) {
                 $time = $model::TIME_CACHE_MODEL;

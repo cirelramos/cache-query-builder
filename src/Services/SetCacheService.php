@@ -21,7 +21,7 @@ class SetCacheService
      */
     public static function execute($customKey, $data = [], $tag = null, $time = 0, $disabled = false): void
     {
-        $time      = $time === 0 ? CacheConst::CACHE_TIME_DAY : $time;
+        $time      = $time === 0 ? config('cache-query.cache_time_seconds') : $time;
         $tag       = GetTagCacheService::execute(null, $tag);
         $customKey = GetKeyCacheBySystemService::execute($customKey, $disabled);
         Cache::tags($tag)

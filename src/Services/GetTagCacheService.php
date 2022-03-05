@@ -23,7 +23,7 @@ class GetTagCacheService
     {
         $model      = ( $query instanceof CacheBuilder ) ? $query->getModel() : null;
         $tag        = $tag ?? [];
-        $tagDefault = CacheConst::CACHE_TAG_NAME;
+        $tagDefault = config('cache-query.cache_tag_name');
         $arrayTags = [ $tagDefault ];
 
         if (is_string($tag)) {

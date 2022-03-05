@@ -21,7 +21,13 @@ return [
      * default time when you don't set time in model class
      * 300 seconds are 5 minutes
      */
-    'cache_default_time_minutes' => "300",
+    'cache_default_time_seconds' => "300",
+
+    /*
+     * default time to SetCache class utility
+     * 300 seconds are 5 minutes
+     */
+    'cache_time_seconds' => "186400",
 
     /*
      * elements to load from request

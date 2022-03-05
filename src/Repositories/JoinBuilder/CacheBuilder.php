@@ -79,7 +79,7 @@ class CacheBuilder extends Builder
         $extras=$perPage.'-'.$page;
         $nameCache = $this->generateNameCache($query, $columns,$extras);
         if ($time === null) {
-            $time = CacheConst::CACHE_TIME_FIVE_MINUTES;
+            $time = config('cache-query.cache_default_time_seconds');
         }
 
         if (request()->header('force-not-cache') != null) {
