@@ -2,7 +2,15 @@
     "name": "cirelramos/cache-query-builder",
     "description": "it is a package provider cache from query generate and purge cache when used methods specifics",
     "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "cache",
+        "query",
+        "database"
+    ],
     "require": {
+        "php": "^7.4|^8.0",
         "spatie/laravel-query-builder": "^5.0",
         "illuminate/support": "^9.3",
         "illuminate/http": "^9.3",
@@ -12,7 +20,17 @@
     },
     "autoload": {
         "psr-4": {
-            "Cirelramos\\CacheQueryBuilder\\": "src/"
+            "Cirelramos\\Cache\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Cirelramos\\Cache\\ServiceProvider"
+            ]
         }
     },
     "authors": [
@@ -20,5 +38,6 @@
             "name": "Cirel Ramos",
             "email": "cirelramos@gmail.com"
         }
-    ]
+    ],
+    "minimum-stability": "dev"
 }

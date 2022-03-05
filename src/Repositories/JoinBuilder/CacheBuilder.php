@@ -1,11 +1,11 @@
 <?php
 
-namespace CirelRamos\CacheQueryBuilder\Repositories\JoinBuilder;
+namespace Cirelramos\Cache\Repositories\JoinBuilder;
 
-use CirelRamos\CacheQueryBuilder\Classes\ModelConst;
-use CirelRamos\CacheQueryBuilder\Repositories\UtilsBuilder\CacheQueryTrait;
-use CirelRamos\CacheQueryBuilder\Services\GetParametersOrderService;
-use CirelRamos\CacheQueryBuilder\Services\GetParametersPaginationService;
+use Cirelramos\Cache\Classes\ModelConst;
+use Cirelramos\Cache\Repositories\UtilsBuilder\CacheQueryTrait;
+use Cirelramos\Cache\Services\GetParametersOrderService;
+use Cirelramos\Cache\Services\GetParametersPaginationService;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Cache;
@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Cache;
 /**
  *
  */
-class CoreBuilder extends Builder
+class CacheBuilder extends Builder
 {
     use CacheQueryTrait;
 
@@ -26,7 +26,7 @@ class CoreBuilder extends Builder
         $direction = null,
         $column = null,
         $customAcceptColumns = [],
-    ): CoreBuilder {
+    ): CacheBuilder {
         [ $direction, $column ] = GetParametersOrderService::execute(
             $this,
             $direction,

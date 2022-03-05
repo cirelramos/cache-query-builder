@@ -1,8 +1,8 @@
 <?php
 
-namespace CirelRamos\CacheQueryBuilder\Services;
+namespace Cirelramos\Cache\Services;
 
-use CirelRamos\CacheQueryBuilder\Repositories\JoinBuilder\CoreBuilder;
+use Cirelramos\Cache\Repositories\JoinBuilder\CacheBuilder;
 
 /**
  *
@@ -16,10 +16,10 @@ class GetParametersOrderService
      * @return array
      */
     public static function execute(
-        CoreBuilder $query,
-                    $directionParameter = null,
-                    $columnParameter = null,
-                    $customAcceptColumns = [],
+        CacheBuilder $query,
+                     $directionParameter = null,
+                     $columnParameter = null,
+                     $customAcceptColumns = [],
     ): array {
         $orderByRequest = request()->direction_order_by;
         $direction      = $orderByRequest ?? $directionParameter;

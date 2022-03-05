@@ -1,6 +1,6 @@
 <?php
 
-namespace CirelRamos\CacheQueryBuilder\Traits;
+namespace Cirelramos\Cache\Traits;
 
 use Illuminate\Support\Facades\Cache;
 

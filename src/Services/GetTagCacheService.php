@@ -1,14 +1,14 @@
 <?php
 
-namespace CirelRamos\CacheQueryBuilder\Services;
+namespace Cirelramos\Cache\Services;
 
-use CirelRamos\CacheQueryBuilder\Classes\ModelConst;
-use CirelRamos\CacheQueryBuilder\Repositories\JoinBuilder\CoreBuilder;
+use Cirelramos\Cache\Classes\ModelConst;
+use Cirelramos\Cache\Repositories\JoinBuilder\CacheBuilder;
 use Exception;
 
 /**
  * Class GetTagCacheService
- * @package CirelRamos\CacheQueryBuilder\Services
+ * @package Cirelramos\Cache\Services
  */
 class GetTagCacheService
 {
@@ -21,7 +21,7 @@ class GetTagCacheService
      */
     public static function execute($query = null, $tag = null): array
     {
-        $model      = ( $query instanceof CoreBuilder ) ? $query->getModel() : null;
+        $model      = ( $query instanceof CacheBuilder ) ? $query->getModel() : null;
         $tag        = $tag ?? [];
         $tagDefault = ModelConst::CACHE_TAG_NAME;
         $arrayTags = [ $tagDefault ];

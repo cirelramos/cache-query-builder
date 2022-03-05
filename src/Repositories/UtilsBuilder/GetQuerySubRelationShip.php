@@ -1,10 +1,10 @@
 <?php
 
-namespace CirelRamos\CacheQueryBuilder\Repositories\UtilsBuilder;
+namespace Cirelramos\Cache\Repositories\UtilsBuilder;
 
 /**
  * Class GetQuerySubRelationShip
- * @package CirelRamos\CacheQueryBuilder\Repositories\UtilsBuilder
+ * @package Cirelramos\Cache\Repositories\UtilsBuilder
  */
 class GetQuerySubRelationShip
 {

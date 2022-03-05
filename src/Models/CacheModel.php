@@ -1,15 +1,15 @@
 <?php
 
-namespace CirelRamos\CacheQueryBuilder\Models;
+namespace Cirelramos\Cache\Models;
 
-use CirelRamos\CacheQueryBuilder\Repositories\JoinBuilder\CoreBuilder;
+use Cirelramos\Cache\Repositories\JoinBuilder\CacheBuilder;
 use Illuminate\Database\Eloquent\Model;
 use Kirschbaum\PowerJoins\PowerJoins;
 
 /**
  *
  */
-class CoreModel extends Model
+class CacheModel extends Model
 {
 
     use PowerJoins;
@@ -22,7 +22,7 @@ class CoreModel extends Model
      */
     public function newEloquentBuilder($query)
     {
-        return new CoreBuilder($query);
+        return new CacheBuilder($query);
     }
 
 }

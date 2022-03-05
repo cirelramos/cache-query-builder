@@ -1,10 +1,10 @@
 <?php
 
-namespace CirelRamos\CacheQueryBuilder\Repositories\UtilsBuilder;
+namespace Cirelramos\Cache\Repositories\UtilsBuilder;
 
-use CirelRamos\CacheQueryBuilder\Classes\ModelConst;
-use CirelRamos\CacheQueryBuilder\Repositories\JoinBuilder\CoreBuilder;
-use CirelRamos\CacheQueryBuilder\Services\GetTagCacheService;
+use Cirelramos\Cache\Classes\ModelConst;
+use Cirelramos\Cache\Repositories\JoinBuilder\CacheBuilder;
+use Cirelramos\Cache\Services\GetTagCacheService;
 use Illuminate\Config\Repository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Database\Eloquent\Model;
@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Cache;
 
 /**
  * Trait CacheQueryTrait
- * @package CirelRamos\CacheQueryBuilder\Repositories\UtilsBuilder
+ * @package Cirelramos\Cache\Repositories\UtilsBuilder
  */
 trait CacheQueryTrait
 {
@@ -29,7 +29,7 @@ trait CacheQueryTrait
         $tag = null,
         int $time = null
     ): Collection {
-        /** @var CoreBuilder $this */
+        /** @var CacheBuilder $this */
         $query     = $this;
         $tag       = $this->setTag($query, $tag);
         $nameCache = $this->generateNameCache($query, $columns);
@@ -66,7 +66,7 @@ trait CacheQueryTrait
         $tag = null,
         int $time = null
     ): ?Model {
-        /** @var CoreBuilder $this */
+        /** @var CacheBuilder $this */
         $query     = $this;
         $tag       = $this->setTag($query, $tag);
         $nameCache = $this->generateNameCache($query, $columns);
@@ -80,12 +80,12 @@ trait CacheQueryTrait
     }
 
     /**
-     * @param CoreBuilder $query
+     * @param CacheBuilder $query
      * @param             $columns
      * @param             $extras
      * @return string
      */
-    public function generateNameCache(CoreBuilder $query, $columns, $extras = ''): string
+    public function generateNameCache(CacheBuilder $query, $columns, $extras = ''): string
     {
         $querySql = $query->toSql();
         if (is_array($columns)) {
@@ -125,17 +125,17 @@ trait CacheQueryTrait
     }
 
     /**
-     * @param CoreBuilder $query
+     * @param CacheBuilder $query
      * @param             $columns
      * @param             $nameCache
-     * @param array       $tag
+     * @param array        $tag
      * @return array
      */
     public function firstDataFromCacheOrDatabase(
-        CoreBuilder $query,
-        $columns,
-        $nameCache,
-        array $tag
+        CacheBuilder $query,
+                     $columns,
+                     $nameCache,
+        array        $tag
     ): array {
         $dataIsFromCache = true;
         $dataFromCache   = $this->getCache($nameCache, $tag);
@@ -155,17 +155,17 @@ trait CacheQueryTrait
     }
 
     /**
-     * @param CoreBuilder $query
+     * @param CacheBuilder $query
      * @param             $columns
      * @param             $nameCache
-     * @param array       $tag
+     * @param array        $tag
      * @return array
      */
     public function getDataFromCacheOrDatabase(
-        CoreBuilder $query,
-        $columns,
-        $nameCache,
-        array $tag
+        CacheBuilder $query,
+                     $columns,
+                     $nameCache,
+        array        $tag
     ): array {
         $dataIsFromCache = true;
         $dataFromCache   = $this->getCache($nameCache, $tag);

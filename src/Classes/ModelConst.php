@@ -2,7 +2,7 @@
 
 /** @noinspection PhpMissingDocCommentInspection */
 
-namespace CirelRamos\CacheQueryBuilder\Classes;
+namespace Cirelramos\Cache\Classes;
 
 class ModelConst
 {

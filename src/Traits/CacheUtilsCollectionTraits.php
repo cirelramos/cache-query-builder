@@ -1,22 +1,22 @@
 <?php
 
-namespace CirelRamos\CacheQueryBuilder\Traits;
+namespace Cirelramos\Cache\Traits;
 
 
 //TODO disable for this version
 //
 //
-//use CirelRamos\CacheQueryBuilder\Classes\ModelConst;
-//use CirelRamos\CacheQueryBuilder\Services\GetCacheService;
-//use CirelRamos\CacheQueryBuilder\Services\GetKeyCacheBySystemService;
-//use CirelRamos\CacheQueryBuilder\Services\GetTagCacheService;
-//use CirelRamos\CacheQueryBuilder\Services\SetCacheService;
+//use Cirelramos\Cache\Classes\ModelConst;
+//use Cirelramos\Cache\Services\GetCacheService;
+//use Cirelramos\Cache\Services\GetKeyCacheBySystemService;
+//use Cirelramos\Cache\Services\GetTagCacheService;
+//use Cirelramos\Cache\Services\SetCacheService;
 //use Exception;
 //use Illuminate\Support\Facades\Cache;
 //
 ///**
 // * Trait CacheRedisTraits
-// * @package CirelRamos\CacheQueryBuilder\Traits
+// * @package Cirelramos\Cache\Traits
 // */
 //trait CacheUtilsCollectionTraits
 //{

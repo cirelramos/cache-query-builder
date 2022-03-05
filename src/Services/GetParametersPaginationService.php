@@ -1,12 +1,12 @@
 <?php
 
-namespace CirelRamos\CacheQueryBuilder\Services;
+namespace Cirelramos\Cache\Services;
 
-use CirelRamos\CacheQueryBuilder\Classes\ModelConst;
+use Cirelramos\Cache\Classes\ModelConst;
 
 /**
  * Class GetParametersPaginationService
- * @package CirelRamos\CacheQueryBuilder\Services
+ * @package Cirelramos\Cache\Services
  */
 class GetParametersPaginationService
 {
