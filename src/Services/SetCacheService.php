@@ -2,7 +2,6 @@
 
 namespace Cirelramos\Cache\Services;
 
-use Cirelramos\Cache\Classes\CacheConst;
 use Exception;
 use Illuminate\Support\Facades\Cache;
 

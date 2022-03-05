@@ -2,8 +2,6 @@
 
 namespace Cirelramos\Cache\Services;
 
-use Cirelramos\Cache\Repositories\JoinBuilder\CacheBuilder;
-
 /**
  *
  */

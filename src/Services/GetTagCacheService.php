@@ -2,7 +2,6 @@
 
 namespace Cirelramos\Cache\Services;
 
-use Cirelramos\Cache\Classes\CacheConst;
 use Cirelramos\Cache\Repositories\JoinBuilder\CacheBuilder;
 use Exception;
 
