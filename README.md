@@ -30,14 +30,14 @@ set provider
 ```php
 'providers' => [
     // ...
-    Cirelramos\Cache\ServiceProvider::class,
+    Cirelramos\Cache\Providers\ServiceProvider::class,
 ],
 ```
 
 
 The defaults are set in `config/cache-query.php`. Publish the config to copy the file to your own config:
 ```sh
-php artisan vendor:publish --provider="Cirelramos\Cache\ServiceProvider"
+php artisan vendor:publish --provider="Cirelramos\Cache\Providers\ServiceProvider"
 ```
 
 > **Note:** this is necessary to yo can change default config
@@ -64,7 +64,7 @@ To cache for query you need use methods: getFromCache or firstCache
 ```
 
 
-if you want purge cache can use methods: saveToCache insertToCache, deleteToCache
+if you want purge cache can use methods: saveToCache, insertToCache, deleteToCache
 
 ```php
             $product = new Product();
