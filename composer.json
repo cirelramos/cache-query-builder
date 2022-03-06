@@ -14,6 +14,7 @@
         "spatie/laravel-query-builder": "^3.6",
         "illuminate/database": "^7.20|^8.19|^9.0",
         "illuminate/http": "^7.20|^8.19|^9.0",
+        "illuminate/contracts": "^7.20|^8.19|^9.0",
         "illuminate/config": "^7.20|^8.19|^9.0",
         "illuminate/database": "^7.20|^8.19|^9.0",
         "kirschbaum-development/eloquent-power-joins": "^2.5|^2.6"
