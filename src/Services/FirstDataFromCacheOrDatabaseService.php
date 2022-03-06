@@ -4,7 +4,6 @@ namespace Cirelramos\Cache\Services;
 
 use Cirelramos\Cache\Repositories\JoinBuilder\CacheBuilder;
 use Illuminate\Support\Facades\Cache;
-use function Cirelramos\Cache\Traits\request;
 
 /**
  *
