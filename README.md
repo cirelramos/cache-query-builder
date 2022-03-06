@@ -64,19 +64,19 @@ To cache for query you need use methods: getFromCache or firstCache
 ```
 
 
-if you want purge cache can use methods: saveToCache, insertToCache, deleteToCache
+if you want purge cache can use methods: saveWithCache, insertWithCache, deleteWithCache
 
 ```php
             $product = new Product();
-            $product->saveToCache();
+            $product->saveWithCache();
 ```
 
 ```php
-            Product::insertToCache($values);
+            Product::insertWithCache($values);
 ```
 
 ```php
-            $product->deleteToCache();
+            $product->deleteWithCache();
 ```
 
 

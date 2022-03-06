@@ -4,6 +4,8 @@ namespace Cirelramos\Cache\Services;
 
 use Cirelramos\Cache\Repositories\JoinBuilder\CacheBuilder;
 use Exception;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class GetTagCacheService
@@ -20,7 +22,8 @@ class GetTagCacheService
      */
     public static function execute($query = null, $tag = null): array
     {
-        $model      = ( $query instanceof CacheBuilder ) ? $query->getModel() : null;
+        $model      = ( $query instanceof Builder ) ? $query->getModel() :
+            null;
         $tag        = $tag ?? [];
         $tagDefault = config('cache-query.cache_tag_name');
         $arrayTags = [ $tagDefault ];
