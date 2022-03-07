@@ -57,6 +57,6 @@ trait PurgeCacheBeforeActiveRecord
         $tag   = GetTagCacheService::execute($query, $tag);
         Cache::tags($tag)->flush();
 
-        return $this->save();
+        return $this->delete();
     }
 }
