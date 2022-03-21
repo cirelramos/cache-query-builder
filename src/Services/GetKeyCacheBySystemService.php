@@ -40,9 +40,7 @@ class GetKeyCacheBySystemService
             if (is_array($value)) {
                 $value = json_encode($value);
             }
-            if (is_string($value)) {
-                $values .= $value;
-            }
+                $values .= "_" . $value;
         }
 
         return $values;
@@ -66,9 +64,7 @@ class GetKeyCacheBySystemService
             if (is_array($value)) {
                 $value = json_encode($value);
             }
-            if (is_string($value)) {
-                $values .= $value;
-            }
+            $values .= "_" . $value;
         }
 
         return $values;
