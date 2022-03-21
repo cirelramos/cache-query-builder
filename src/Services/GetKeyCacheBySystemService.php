@@ -15,7 +15,7 @@ class GetKeyCacheBySystemService
     {
         $request = request();
         $key     = self::getValuesFromRequest($request);
-        $key     .= self::getValuesFromRequest($request);
+        $key     .= self::getValuesFromHeaderRequest($request);
 
         $customKey .= "_" . $key;
 
