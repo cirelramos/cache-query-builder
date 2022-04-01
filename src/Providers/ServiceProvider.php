@@ -21,7 +21,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     private function mergeConfig()
     {
         $configPath = __DIR__.'/../config/cache-query.php';
-        $this->mergeConfigFrom($configPath, 'cache-query-builder');
+        $this->mergeConfigFrom($configPath, 'cache');
     }
 
     private function publishConfig()
