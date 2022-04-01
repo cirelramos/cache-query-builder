@@ -21,16 +21,14 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     private function mergeConfig()
     {
         $configPath = __DIR__.'/../config/cache-query.php';
-        $this->mergeConfigFrom($configPath, 'l5-swagger');
+        $this->mergeConfigFrom($configPath, 'cache-query-builder');
     }
 
     private function publishConfig()
     {
         // Publish a config file
         $configPath = __DIR__.'/../config/cache-query.php';
-        $this->publishes([
-                             $configPath => config_path('cache-query.php'),
-                         ], 'config');
+        $this->publishes([ $configPath => config_path('cache-query.php'), ], 'config');
     }
 
     private function publishMigrations()
