@@ -65,6 +65,11 @@ trait CacheQueryTrait
             $data,
             $dataIsFromCache,
         ] = FirstDataFromCacheOrDatabaseService::execute($query, $columns, $nameCache, $tag);
+
+        if($data === "-"){
+            $data = null;
+        }
+
         $this->setCache($nameCache, $data, $time, $dataIsFromCache, $tag);
 
         return $data === '' ? null : $data;
@@ -89,6 +94,10 @@ trait CacheQueryTrait
             if ($time === null) {
                 $time = GetTimeFromModelService::execute($this);
             }
+            if($data === null){
+                $data = "-";
+            }
+
             Cache::tags($tag)->put($nameCache, $data, $time);
         }
     }
