@@ -36,7 +36,7 @@ class FirstDataFromCacheOrDatabaseService
 
         $dataIsFromCache  = false;
         $dataFromDatabase = $query->first($columns);
-        $dataFromDatabase = $dataFromDatabase === null ? '' : $dataFromDatabase;
+        $dataFromDatabase = $dataFromDatabase ?? '-';
 
         return [ $dataFromDatabase, $dataIsFromCache ];
     }
