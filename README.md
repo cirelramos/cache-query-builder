@@ -52,16 +52,30 @@ To cache for query you need use extend Class
 ```php
 class Product extends CacheModel
 {
+    //custom name tag cache by model
+    public const TAG_CACHE_MODEL = 'TAG_CACHE_PRODUCT_';
+    // custom time cache by model
+    public const TIME_CACHE_MODEL = ModelConst::CACHE_TIME_DAY;
 }
 ```
 
 To cache for query you need use methods: getFromCache or firstCache
 
 ```php
-        return Product::query()
-            ->where('active', ModelConst::ENABLED)
+    public function index(Request $request)
+    {
+        $relations = ['prices'];
+        $tags = Product::TAG_CACHE_MODEL;
+        $products = Product::query()
+            ->where('name','like','%'.$request->name.'%')
             ->with($relations)
             ->getFromCache(['*'], $tags);
+
+        $code = 200;
+        $message = '';
+        $data = ['products' => $products];
+        return response()->json(['code' => $code, 'message' => $message, 'data' => $data], $code);
+    }
 ```
 
 
@@ -78,6 +92,30 @@ if you want purge cache can use methods: saveWithCache, insertWithCache, deleteW
 
 ```php
             $product->deleteWithCache();
+```
+
+cache to method of controller, this use increase a lot your application performance
+```php
+    public function index(Request $request)
+    {
+        //this key is important!!, you cant add more values to differentiate cache or parameter request to method
+        $customKey = "global_active_products_".$request->name;
+        $dataCache = GetCacheService::execute($customKey);
+        if (empty($dataCache) === false) {
+            return $dataCache;
+        }
+    
+        $products = Product::where('name','like','%'.$request->name.'%')->get();
+    
+        $code = 200;
+        $message = '';
+        $data = ['products' => $products];
+        $response = response()->json(['code' => $code, 'message' => $message, 'data' => $data], $code);
+    
+        SetCacheService::execute($customKey, $response, [], ModelConst::CACHE_TIME_THIRTY_MINUTES);
+    
+        return $response;
+    }
 ```
 
 
