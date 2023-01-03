@@ -18,9 +18,9 @@ The `cache-query-builder` package allows you to increase the performance and low
 
 ## Installation
 
-Require the `litermi/cache-query-builder` package in your `composer.json` and update your dependencies:
+Require the `cirelramos/cache-query-builder` package in your `composer.json` and update your dependencies:
 ```sh
-composer require litermi/cache-query-builder
+composer require cirelramos/cache-query-builder
 ```
 
 
