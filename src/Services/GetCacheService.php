@@ -21,7 +21,9 @@ class GetCacheService
     {
         $tag       = GetTagCacheService::execute(null, $tag);
         $customKey = GetKeyCacheBySystemService::execute($customKey);
-        if (request()->header('force-not-cache') != null) {
+        $headerName = config('cache-query.header_force_not_cache_name');
+        $headerName = empty($headerName) ?  'force-not-cache' : $headerName;
+        if (request()->header($headerName) != null) {
             return null;
         }
         return Cache::tags($tag)

@@ -43,4 +43,10 @@ return [
      * ["origin", "Authorization"]
      */
     'elements_from_header_request' => [],
+
+    /*
+     * name header to force query go to database
+     * Example: "force-not-cache"
+     */
+    'header_force_not_cache_name' => "force-not-cache",
 ];

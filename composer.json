@@ -17,7 +17,8 @@
         "illuminate/contracts": "^6.9|^7.0|^8.0|^9.0",
         "illuminate/config": "^6.9|^7.0|^8.0|^9.0",
         "illuminate/console": "^6.9|^7.0|^8.0|^9.0",
-        "kirschbaum-development/eloquent-power-joins": "^2.5|^2.6"
+        "kirschbaum-development/eloquent-power-joins": "^2.5|^2.6",
+        "cirelramos/logs": "^1.0"
     },
     "autoload": {
         "psr-4": {
@@ -27,6 +28,11 @@
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Cirelramos\\Cache\\Providers\\ServiceProvider"
+            ]
         }
     },
     "authors": [

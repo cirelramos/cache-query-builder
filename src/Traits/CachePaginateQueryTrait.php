@@ -59,7 +59,9 @@ trait CachePaginateQueryTrait
             $time = config('cache-query.cache_default_time_seconds');
         }
 
-        if (request()->header('force-not-cache') != null) {
+        $headerName = config('cache-query.header_force_not_cache_name');
+        $headerName = empty($headerName) ?  'force-not-cache' : $headerName;
+        if (request()->header($headerName) != null) {
             return $this->paginateByRequest($columns, $perPage, $pageName, $page);
         }
 

@@ -2,8 +2,8 @@
 
 namespace Cirelramos\Cache\Schedulers;
 
-use Cirelramos\Cache\Models\ModelCacheConst;
 use Illuminate\Console\Command;
+use Cirelramos\Cache\Models\ModelCacheConst;
 
 /**
  *
@@ -34,8 +34,8 @@ class CustomCommand extends Command
 
     public function disableActiveRecord(): void
     {
-        $enableActiveRecord = $this->argument('active_record');
-        if (empty($enableActiveRecord) === false && $enableActiveRecord !== ModelCacheConst::ENABLE_ACTIVE_RECORD) {
+        $modeRecord = $this->argument('mode_record');
+        if (empty($modeRecord) === false && $modeRecord !== ModelCacheConst::ENABLE_ACTIVE_RECORD) {
             request()->headers->set(ModelCacheConst::HEADER_ACTIVE_RECORD, ModelCacheConst::DISABLE_ACTIVE_RECORD);
         }
     }
